@@ -89,7 +89,7 @@ CLIENT_URL=http://localhost:5173
 ```bash
 # Clone the repo
 git clone https://github.com/jjunglen/Sneaker-Collection-Tracker
-cd sneaker-app
+cd sneaker-app 
 
 # Install server dependencies
 cd server
@@ -100,7 +100,7 @@ cd ../client
 npm install
 
 # Add your .env file inside server/
-touch server/.env
+touch server/.env 
 
 # Run both servers
 cd ../server
