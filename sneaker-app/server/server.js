@@ -3,10 +3,12 @@ const express = require("express");
 const cors = require("cors");
 const helmet = require("helmet");
 const rateLimit = require("express-rate-limit");
-const { connectDB } = require("./config/db");
+const { connectDB, sequelize } = require("./config/db");
+const authRoute = require("./routes/authRoutes");
+const sneakerRoute = require("./routes/sneakerRoutes");
 
 const app = express();
-const PORT = process.env.PORT || 5000;
+const PORT = process.env.PORT;
 
 connectDB();
 
@@ -32,6 +34,10 @@ const authLimiter = rateLimit({
 })
 app.use("/api/auth", authLimiter);
 
+// Routes
+app.use("/api/auth", authRoute);
+app.use("/api/sneakers", sneakerRoute);
+
 // Health check
 app.get("/api/test", (req, res) => {
     res.json({
@@ -39,6 +45,17 @@ app.get("/api/test", (req, res) => {
     })
 })
 
-app.listen(PORT, () => {
-    console.log(`Server running on port ${PORT}`);
-})
+const startServer = async () => {
+    try {
+        await sequelize.sync({ alter: true})
+        console.log("Tables synced!");
+        app.listen(PORT, () => {
+            console.log(`Server running on port ${PORT}`);
+        })
+    } catch(error) {
+        console.log("Failed to sync tables:", error.message);
+
+    }
+}
+
+startServer();
