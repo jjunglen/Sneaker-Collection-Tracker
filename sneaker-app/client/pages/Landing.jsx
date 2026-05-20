@@ -10,7 +10,7 @@ export default function Landing() {
     }
 
     return (
-      <section className="p-6 sm:p-16 flex flex-col justify-center mx-auto">
+      <section className="p-6 sm:p-16 flex flex-col justify-center max-w-6xl mx-auto">
         <div className="sm:p-20 py-16 px-3 mb-6 rounded-xl text-center bg-blue-950 shadow-[6px_6px_0px_#4CAF82]">
           <div className="bg-emerald-500 w-12 h-1 mx-auto rounded-full mb-4"></div>
 
@@ -50,7 +50,7 @@ export default function Landing() {
             <section className="w-full border border-stone-400 p-7 bg-white rounded-xl shadow-[6px_6px_0px_#4CAF82]">
                 <FaShieldAlt className="text-xl mb-2 text-green-600" />
                 <p className="text-blue-950 font-medium mb-1 text-medium">Secure account</p>
-                <p className="text-slate-600 text-sm">JWT auth and bcrypt keep your data safe.</p>
+                <p className="text-slate-600 text-sm">JWT auth and bcrypt to keep your data safe.</p>
             </section>
             
         </div>

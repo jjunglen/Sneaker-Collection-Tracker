@@ -19,7 +19,7 @@ export default function Navbar() {
                 to="/"
                 className="flex items-center gap-3  text-gray-100 font-medium text-sm"
             >
-                <FaAtom className="text-xl text-green-600"/>
+                <FaAtom className="text-3xl text-green-600"/>
                 <p className="font-bold">Sneaker Collection App</p>
             </Link>
 
