@@ -1,4 +1,5 @@
 import { FaEdit, FaTrash } from "react-icons/fa";
+import { GiConverseShoe} from "react-icons/gi"
 
 export default function SneakerCard({ sneaker, onEdit, onDelete }) {
     
@@ -14,6 +15,16 @@ export default function SneakerCard({ sneaker, onEdit, onDelete }) {
         if (status === "wanted") return "bg-blue-100 text-blue-800";
         if (status === "sold") return "bg-slate-200 text-slate-600"
 
-        return "bg-s"
+        return "bg-slate-200 text-slate-600";
     }
+
+    return (
+        <section className="bg-white">
+            {/* Image Div */}
+            <div className="">
+                <GiConverseShoe className="text-2xl text-gray-200" />
+            </div>
+
+        </section>
+    )
 }
