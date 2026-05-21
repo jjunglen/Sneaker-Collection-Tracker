@@ -64,8 +64,7 @@ export default function Register() {
             }
 
             // Save token
-            login(data.user, data.token);
-            navigate("/collection")
+            navigate("/login")
 
         } catch(error) {
             console.error("Registration error:", error);
