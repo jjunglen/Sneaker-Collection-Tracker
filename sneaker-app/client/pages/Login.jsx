@@ -39,10 +39,10 @@ export default function Login() {
                 body: JSON.stringify({ email, password } )
             })
 
-            const data = response.json();
+            const data = await response.json();
 
             if (!response.ok) {
-                throw new Error(data.error | "Login failed");
+                throw new Error(data.error || "Login failed");
             }
 
             login(data.user, data.token);
@@ -93,7 +93,7 @@ export default function Login() {
                             type="password"
                             placeholder="Your password"
                             value={password}
-                            onChange={(event) => setEmail(event.target.value)}
+                            onChange={(event) => setPassword(event.target.value)}
                             className="px-4 py-2 border border-stone-400 text-blue-950 text-sm rounded-lg bg-stone-100 focus:ring-blue-900"
 
                         />
